@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TechJobs.Models;
-
+using TechJobs.ViewModels;
 namespace TechJobs.Data
 {
     class JobData
@@ -15,6 +15,12 @@ namespace TechJobs.Data
         public JobFieldData<Employer> Employers { get; set; } = new JobFieldData<Employer>();
         public JobFieldData<Location> Locations { get; set; } = new JobFieldData<Location>();
         public JobFieldData<PositionType> PositionTypes { get; set; } = new JobFieldData<PositionType>();
+
+        internal static JobData GetInstance(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public JobFieldData<CoreCompetency> CoreCompetencies { get; set; } = new JobFieldData<CoreCompetency>();
 
 
