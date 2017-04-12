@@ -30,7 +30,7 @@ namespace TechJobs.Controllers
         }
 
         [HttpPost]
-   
+        [Route("/Job/Index/{id}")]
         public IActionResult New(NewJobViewModel newJobViewModel)
         {
             if(ModelState.IsValid)
@@ -48,7 +48,7 @@ namespace TechJobs.Controllers
             }
            
             return View(newJobViewModel);
-            Redirect("/Job");
+            //Redirect("/Job");
             
         }
         // TODO #6 - Validate the ViewModel and if valid, create a 
