@@ -19,7 +19,8 @@ namespace TechJobs.Controllers
         // The detail display for a given Job at URLs like /Job?id=17
         public IActionResult Index(int id)
         {
-            Job newJob = new Job();
+            Job newJob =  jobData.Find(id);
+
             return View(newJob);
         }
 
@@ -30,7 +31,7 @@ namespace TechJobs.Controllers
         }
 
         [HttpPost]
-        [Route("/Job/Index/{id}")]
+
         public IActionResult New(NewJobViewModel newJobViewModel)
         {
             if(ModelState.IsValid)
@@ -44,16 +45,16 @@ namespace TechJobs.Controllers
                         PositionType = newJobViewModel.PositionType
                     };
                 jobData.Jobs.Add(newJob);
-           
+             //   return Redirect("/Job");
             }
            
             return View(newJobViewModel);
-            //Redirect("/Job");
+            
             
         }
         // TODO #6 - Validate the ViewModel and if valid, create a 
         // new Job and add it to the JobData data store. Then
         // redirect to the Job detail (Index) action/view for the new Job.
-     
+       
     }
 }
