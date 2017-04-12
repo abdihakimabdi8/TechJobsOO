@@ -45,7 +45,7 @@ namespace TechJobs.Controllers
                         PositionType = newJobViewModel.PositionType
                     };
                 jobData.Jobs.Add(newJob);
-             //   return Redirect("/Job");
+                return Redirect("/Job");
             }
            
             return View(newJobViewModel);
